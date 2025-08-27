@@ -8,6 +8,9 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from day04.part3_sort_adv_quick import quick_sort
+from day05.part1_sort_merge import merge_sort
+from day05.part2_sort_heap import heap_sort
+
 # 실행시간 측정을 위한 time 패키지 임포트
 import time
 
@@ -30,12 +33,13 @@ def timing(func, arr:list, name:str="no"):
 
 if __name__ == "__main__":
 	import random
-	n = 1000
+	n = 900
 	arr = list(range(n))
 	random.shuffle(arr)
-	
 
 	timing(bubble_sort, arr, "bubble")
 	timing(selection_sort, arr, "selection")
 	timing(insertion_sort, arr, "insertion")
 	timing(quick_sort, arr, "quick")
+	timing(merge_sort, arr, "merge")
+	timing(heap_sort, arr, "heap")
